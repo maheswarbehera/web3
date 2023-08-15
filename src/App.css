@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'LEMON MILK';
+  src: url('./font/LEMONMILK-Regular.woff2') format('woff2'),
+      url('./font/LEMONMILK-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo{
+  color: #FFF;
+  font-family: 'LEMON MILK';
+  font-size: 37px;
+  text-transform: uppercase;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header ,.body{
+  background-color: #092E7D;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+label{
+  color: #FFF;
+font-family: 'LEMON MILK';
+font-size: 17px;
+text-transform: uppercase;
 }
-
-.App-link {
-  color: #61dafb;
+.custom{
+  border-radius: 10px;
+  background: #20222F !important;
+  color: #FFF !important;
+  font-family: 'LEMON MILK' !important;
+  font-size: 17px !important;
+  text-transform: uppercase;
+  padding: 15px 30px!important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input{
+  border-radius: 5px;
+background: rgba(255, 255, 255, 0.20) !important;
+border: none;
+}
+.copy{
+  color: #FEFEFE;
+font-family: 'LEMON MILK';
+font-size: 30px;
+text-transform: capitalize;
+text-align: center;
 }
