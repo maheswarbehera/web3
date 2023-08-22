@@ -12,7 +12,7 @@
   font-size: 37px;
   text-transform: uppercase;
 }
-.header ,.body{
+.header,.copyright ,.body{
   background-color: #092E7D;
 }
 label{
@@ -30,15 +30,60 @@ text-transform: uppercase;
   text-transform: uppercase;
   padding: 15px 30px!important;
 }
+.custom:hover{
+  background-color: transparent !important;
+  border: 2px solid !important;
+}
 input{
   border-radius: 5px;
 background: rgba(255, 255, 255, 0.20) !important;
 border: none;
 }
-.copy{
+.copy, .wallet{
   color: #FEFEFE;
 font-family: 'LEMON MILK';
-font-size: 30px;
+/* font-size: 30px; */
 text-transform: capitalize;
 text-align: center;
+}
+
+.nav_link{
+  color: #FCFCFC;
+font-family: 'LEMON MILK';
+text-decoration: none;
+}
+
+.note{
+  color: #FFF;
+  /* font-family: 'Inter'; */
+  font-size: 20px;
+  text-transform: capitalize;
+}
+
+svg{
+  height: 50px;
+  width: 50px;
+  padding: 8px;
+  margin-top: 14px;
+  border: 2px solid #fff;
+  border-radius: 50px;
+}
+svg:hover{
+  background-color: #20222F;
+}
+
+@media (max-width: 767px) {
+  svg{
+    transform: rotate(90deg);
+  }
+  .custom{
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo{
+    font-size: 25px;
+    text-align: center;
+  }
 }
