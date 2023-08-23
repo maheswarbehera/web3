@@ -1,11 +1,11 @@
 import React, { useState } from 'react' 
-import { Link, useNavigate } from 'react-router-dom';
+// import { Link, useNavigate } from 'react-router-dom';
 import Web3 from 'web3';
 import {QRCodeCanvas} from 'qrcode.react';
 
 const Wallet = () => {
 
-  const navigate =useNavigate()
+  // const navigate =useNavigate()
 
   const [address, setAddress] = useState('');
   const [privateKey, setPrivateKey] = useState('');
@@ -30,15 +30,22 @@ const Wallet = () => {
 
     }
 
+    const BackToGen = () =>{
+      alert("Back To Generate");
+      // address ? setAddress(address.empty) : console.log(0);                
+    }
+
   return (
     <>
       <div className="body py-5">
-        <div className=''>
+        {address === '' && <div className='generate'>
           <h4 className='wallet py-5'>Click the Generate Button TO Generate Eth Wallet. </h4>
           <div className="text-center pb-5">
-            <button onClick={handleOnSubmit}  className="btn custom" >Generate</button>
+            <button onClick={handleOnSubmit}  className="btn custom" >Generate &rarr;</button>
           </div> 
         </div>
+        }
+        
           {address && 
             <div className="container">
               <div className="row align-items-center">
@@ -49,11 +56,11 @@ const Wallet = () => {
                   <p className='note'><span style={{color:"#FF0101"}}>Note:</span> Do not Share Private key to any one</p>
                 </div>
                   <div className="col-8">
-                    <p className='note'>Wallet Address: {address}</p>
-                    <p className='note'>Private Key: {privateKey}</p>
+                    <p className='note'>Wallet Address : {address}</p>
+                    <p className='note'>Private Key : {privateKey}</p>
                   </div>
                   <div className="text-center pt-5">
-                    <Link to='/wallet' className="btn custom">Back</Link>
+                    <button onClick={BackToGen} className="btn custom">&larr; Back</button>
                   </div> 
               </div>
             </div>
