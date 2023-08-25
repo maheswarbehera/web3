@@ -8,6 +8,7 @@ import {  Route, Routes } from 'react-router-dom';
 import  Wallet  from './component/Wallet/Wallet';
 import Qr from './component/Wallet/Qr';
 import Footer from './component/Footer';
+import Balance from './component/Balance';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route  path="/Converter" Component={Converter}/>
       <Route  path="/wallet" Component={Wallet}/>
       <Route  path="/wallet/qr" Component={Qr}/>
+      <Route  path="/wallet/balance" Component={Balance}/>
 
    </Routes>
    <Footer/>
