@@ -2,7 +2,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import {QRCodeCanvas} from 'qrcode.react';
-function Qr() {
+function Qr(props) {
 
   return (
     <>
@@ -16,8 +16,8 @@ function Qr() {
               <p className='note'><span style={{color:"#FF0101"}}>Note:</span> Do not Share Private key to any one</p>
             </div>
               <div className="col-8">
-                <p className='note'>Wallet Address: xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                <p className='note'>Private Key:  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                {/* <p className='note'>Wallet Address: {address}</p> */}
+                <p className='note'>Private Key:  {}</p>
                 
               </div><div className="text-center pt-5">
                   <Link to='/wallet' className="btn custom">Back</Link>

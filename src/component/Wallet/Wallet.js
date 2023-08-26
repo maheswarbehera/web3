@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react' 
+import React,{ useState } from 'react' 
 // import { Link, useNavigate } from 'react-router-dom';
 import Web3 from 'web3';
 import {QRCodeCanvas} from 'qrcode.react';
@@ -7,35 +7,35 @@ const Wallet = () => {
 
   // const navigate =useNavigate()
 
-  const [address, setAddress] = useState('0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5'); //0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5  
+  const [address, setAddress] = useState(''); //(static address for testing ) 0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5 // 0x388C818CA8B9251b393131C08a736A67ccB19297 
   const [privateKey, setPrivateKey] = useState('');
+  const [show, setShow] = useState();
 
-  const createAccount = () => {
+    const createAccount = () => {
+      const web3 = new Web3();
+      const account = web3.eth.accounts.create();
+      console.log(account);
 
-    const web3 = new Web3();
-    const account = web3.eth.accounts.create();
-    console.log(account);
+      setAddress(account.address);
+      setPrivateKey(account.privateKey);
 
-    setAddress(account.address);
-    setPrivateKey(account.privateKey);
-
-    console.log(address)
-    console.log(privateKey)
-  }
+      console.log(address)
+      console.log(privateKey)
+    }
   
     const handleOnSubmit = () =>{
-      alert(`Wallet & Private Key Address created Successfully`)
+      // alert(`Wallet & Private Key Address created Successfully`)
       console.log(`Wallet & Private Key Address created Successfully`);
       createAccount()
       // navigate('/wallet/qr')
     }
 
     const BackToGen = () =>{
-      alert("Back To Generate");
+      // alert("Back To Generate");
+      setAddress('');
+      setPrivateKey('');
       // address ? setAddress(address.empty) : console.log(0);                
     }
-
-    const [show, setShow] = useState();
 
     const FetchBalance = async()=>{
       const ethRpcUrl =`https://crimson-summer-vineyard.ethereum-sepolia.discover.quiknode.pro/66d631d201dc0dad35b353a24ff329c8ed8b874d/`
@@ -43,20 +43,15 @@ const Wallet = () => {
       const balance = await web3.eth.getBalance(address);
       const bal = await web3.utils.fromWei(balance, "ether");
       // navigate('/wallet/balance')
-      alert(`Balance: ${bal} ETH`); // 0.304177100000000001 ETH
+      // alert(`Balance: ${bal} ETH`); // 0.304177100000000001 ETH //14.579355419560447619 ETH
       setShow(`${bal}`)
       console.log(`Balance: ${bal} ETH`);
-   }
+    }
 
-  //  useEffect(()=>{
-  //   
-  //  },[])
-
-  const refresh = () => {
-    window.location.reload();
-  }
+    // const refresh = () => {
+    //   window.location.reload();
+    // }
    
-
   return (
     <>
       <div className="body py-5">
@@ -90,8 +85,8 @@ const Wallet = () => {
           </div>
           <div className="d-flex gap-4  justify-content-center pt-5">
             <button onClick={BackToGen} className="btn custom">&larr; {`Back`}</button>
-            <button onClick={FetchBalance} className="btn custom">{`Check Balance`} &uarr;</button>
-            <button onClick={refresh} className="btn custom">{`Refresh`} &rarr;</button>
+            <button onClick={FetchBalance} className="btn custom">{`Check Balance`} &rarr;</button>
+            {/* <button onClick={refresh} className="btn custom">{`Refresh `} &#10227; </button> */}
           </div>
         </div>
         }
