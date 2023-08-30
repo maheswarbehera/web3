@@ -1,5 +1,4 @@
-import React from 'react';
-import Wallet from './Wallet/Wallet';
+import React from 'react'; 
 // const Web3 = require('web3');
 
 const Balance =  () => {
@@ -11,7 +10,8 @@ const Balance =  () => {
     // console.log(`Balance: ${bal} ETH`);
   return (
     <div>
-        <Wallet/>
+
+      hii
     </div>
   );
 }

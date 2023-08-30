@@ -1,5 +1,5 @@
 import React from 'react';
-import banner from '../component/boss blockchain 1.png'
+import banner from '../assets/boss blockchain 1.png'
 function Banner() {
   return (
     <div>

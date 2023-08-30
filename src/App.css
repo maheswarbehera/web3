@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'LEMON MILK';
-  src: url('./font/LEMONMILK-Regular.woff2') format('woff2'),
-      url('./font/LEMONMILK-Regular.woff') format('woff');
+  src: url('./assets/font/LEMONMILK-Regular.woff2') format('woff2'),
+      url('./assets/font/LEMONMILK-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

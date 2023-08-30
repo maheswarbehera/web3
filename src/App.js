@@ -8,7 +8,7 @@ import {  Route, Routes } from 'react-router-dom';
 import  Wallet  from './component/Wallet/Wallet';
 import Qr from './component/Wallet/Qr';
 import Footer from './component/Footer';
-import Balance from './component/Balance';
+import Balance from './component/Wallet/Balance';
 
 function App() {
   return (

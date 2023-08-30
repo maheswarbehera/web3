@@ -34,6 +34,7 @@ const Wallet = () => {
       // alert("Back To Generate");
       setAddress('');
       setPrivateKey('');
+      setShow('');
       // address ? setAddress(address.empty) : console.log(0);                
     }
 
@@ -71,17 +72,15 @@ const Wallet = () => {
               </div>
               <p className='note'><span style={{color:"#FF0101"}}>{`Note :`}</span>{` Do not Share Private key to any one`}</p>
             </div>
-              <div className="col-lg-8 col-md-8 col-sm-12 col-12 rounded card-wal" style={{background:'rgba(0, 0, 0, 0.2)',padding:'112px 20px'}}>
+              <div className="col-lg-8 col-md-8 col-sm-12 col-12 card-wal py-5 ps-4" style={{background:'rgba(0, 0, 0, 0.2)',borderRadius: '0 50px'}}>
                 <p className='note'>{'Wallet Address : '}<span style={{color:'#00ffb2'}}>{address}</span></p>
                 <p className='note'>{'Private Key : '}<span style={{color:'#00ffb2'}}>{privateKey}</span></p>
-              </div>
-              {
-                show && <div className="text-center py-3 rounded card-bal" style={{background: 'rgb(0 0 0 / 20%)'}}>
-                  <h3 className='py-2' style={{color:'#FFF'}}>{`You have`} <span style={{color:'#00ffb2',textDecoration: 'underline'}}>{`${show} ETH`}</span>{` Balance In Your Wallet.`} </h3>
-                  <p className='note'>{'Wallet Address : '}<span style={{color:'#00ffb2'}}>{address}</span></p>
-                  <p className='note'>{'Private Key : '}<span style={{color:'#00ffb2'}}>{privateKey}</span></p>
-                </div>
-              }
+                {
+                  show && <div className="text-center py-4 card-bal w-75 mx-auto" style={{background: 'rgb(0 0 0 / 20%)', borderRadius: '0 50px'}}>
+                    <h3 className='' style={{color:'#FFF'}}>{`You have`} <span style={{color:'#00ffb2',textDecoration: 'underline'}}>{`${show} ETH`}</span>{` Balance In Your Wallet.`} </h3>
+                  </div>
+                }
+              </div> 
           </div>
           <div className="d-flex gap-4  justify-content-center pt-5">
             <button onClick={BackToGen} className="btn custom">&larr; {`Back`}</button>
@@ -96,3 +95,23 @@ const Wallet = () => {
 }
 
 export default Wallet;
+
+
+// {show && <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+//             <div class="modal-dialog modal-dialog-centered">
+//               <div class="modal-content">
+//                 <div class="modal-header">
+//                   <h1 class="modal-title fs-5" id="exampleModalLabel">{'Wallet Balance'}</h1>
+//                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+//                 </div>
+//                 <div class="modal-body">
+//                   <h3 className='py-2'>{`You have`} <span style={{color:'#rgb(255 0 0)',textDecoration: 'underline'}}>{`${show} ETH`}</span>{` Balance In Your Wallet.`} </h3>
+//                 </div>
+//                 <div class="modal-footer">
+//                   <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>}
+
+//            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">  Launch demo modal </button> 
