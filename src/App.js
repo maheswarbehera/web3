@@ -9,6 +9,7 @@ import  Wallet  from './component/Wallet/Wallet';
 import Qr from './component/Wallet/Qr';
 import Footer from './component/Footer';
 import Balance from './component/Wallet/Balance';
+import Transfer from './component/Transfer';
 
 function App() {
   return (
@@ -22,9 +23,11 @@ function App() {
       <Route  path="/wallet" Component={Wallet}/>
       <Route  path="/wallet/qr" Component={Qr}/>
       <Route  path="/wallet/balance" Component={Balance}/>
+      <Route  path="/tran" Component={Transfer}/>
 
    </Routes>
    <Footer/>
+   {/* <Transfer/> */}
       
    </>
   );

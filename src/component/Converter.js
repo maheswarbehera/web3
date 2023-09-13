@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { parseUnits, formatUnits } from 'ethers'
+import Transaction from './Transaction';
 function Converter() {
    
     const [eth, setEth] = useState('');
@@ -58,6 +59,7 @@ function Converter() {
                 </div>
             </div>
         </div>
+        <Transaction/>
         </>
     );
 }

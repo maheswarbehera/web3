@@ -4,10 +4,9 @@ import Web3 from 'web3';
 import {QRCodeCanvas} from 'qrcode.react';
 
 const Wallet = () => {
+  // const navigate = useNavigate()
 
-  // const navigate =useNavigate()
-
-  const [address, setAddress] = useState(''); //(static address for testing ) 0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5 // 0x388C818CA8B9251b393131C08a736A67ccB19297 
+  const [address, setAddress] = useState('0x6C035843B2065aD2DE1fBd04DbF5EBbbceAa3b53'); //(static address for testing ) 0x95222290DD7278Aa3Ddd389Cc1E1d165CC4BAfe5 // 0x388C818CA8B9251b393131C08a736A67ccB19297 
   const [privateKey, setPrivateKey] = useState('');
   const [show, setShow] = useState();
 
@@ -76,8 +75,8 @@ const Wallet = () => {
                 <p className='note'>{'Wallet Address : '}<span style={{color:'#00ffb2'}}>{address}</span></p>
                 <p className='note'>{'Private Key : '}<span style={{color:'#00ffb2'}}>{privateKey}</span></p>
                 {
-                  show && <div className="text-center py-4 card-bal w-75 mx-auto" style={{background: 'rgb(0 0 0 / 20%)', borderRadius: '0 50px'}}>
-                    <h3 className='' style={{color:'#FFF'}}>{`You have`} <span style={{color:'#00ffb2',textDecoration: 'underline'}}>{`${show} ETH`}</span>{` Balance In Your Wallet.`} </h3>
+                  show && <div className="text-center py-4 card-bal w-75 mx-auto" style={{background: 'rgb(0 0 0 / 20%)', borderRadius: '0 25px'}}>
+                    <h3 className='' style={{color:'#FFF'}}>{`You have`} <span style={{color:'#00ffb2'}}>{`${show} ETH`}</span>{` Balance In Your Wallet.`} </h3>
                   </div>
                 }
               </div> 
